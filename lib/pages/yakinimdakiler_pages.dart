@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rentify/RenkTanimlama/RenkPages.dart';
+import 'package:rentify/constants//RenkPages.dart';
+import 'package:rentify/constants/palet.dart';
 import 'package:rentify/repository/yakindakiler_repository.dart';
 import 'package:rentify/repository/yakindakiler_repository_resim.dart';
 import 'SaticiDetay.dart';
@@ -25,6 +26,8 @@ class _yakinimdakiler_sayfasiState extends State<yakinimdakiler_sayfasi> {
   ResimRepository resimRepository = ResimRepository();
   final saticiDetayResimRepository = SaticiDetayResimRepository();
 
+  Palet palet = Palet();
+
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +50,7 @@ class _yakinimdakiler_sayfasiState extends State<yakinimdakiler_sayfasi> {
           return SizedBox(
             width: 300.0, // İstediğiniz genişliği ayarlayabilirsiniz
             child: Card(
-              elevation: 5.0,
+              elevation: 10.0,
               margin: const EdgeInsets.all(5.0),
               child: Column(
 
@@ -55,7 +58,7 @@ class _yakinimdakiler_sayfasiState extends State<yakinimdakiler_sayfasi> {
                 children: [
                   // Buraya kare şeklinde bir resim ekleyebilirsiniz
                   Padding(
-                    padding: const EdgeInsets.all(10),
+                    padding: Palet.pagePadding,
                     child: GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -72,14 +75,17 @@ class _yakinimdakiler_sayfasiState extends State<yakinimdakiler_sayfasi> {
                         children: <Widget>[
                           ClipRRect(
                             borderRadius: BorderRadius.circular(10),
-                            child: Container(
-                              width: 300,
-                              height: 250,
-                              decoration: BoxDecoration(
-                                color: Colors.blue,
-                                image: DecorationImage(
-                                  image: AssetImage(imagePaths[index]),
-                                  fit: BoxFit.cover,
+                            child: Card(
+                              elevation: 10,
+                              child: Container(
+                                width: 300,
+                                height: 230,
+                                decoration: BoxDecoration(
+                                  color: Colors.blue,
+                                  image: DecorationImage(
+                                    image: AssetImage(imagePaths[index]),
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
@@ -105,7 +111,7 @@ class _yakinimdakiler_sayfasiState extends State<yakinimdakiler_sayfasi> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(10.0),
+                        padding: Palet.pagePadding,
                         child: Text(
                           '₺${bilgi.fiyat} / gün',
                           style: const TextStyle(
@@ -115,7 +121,7 @@ class _yakinimdakiler_sayfasiState extends State<yakinimdakiler_sayfasi> {
                         ),
                       ),
                       const Padding(
-                        padding: EdgeInsets.all(10.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Row(
                           children: <Widget>[
                             Icon(
@@ -153,7 +159,7 @@ class _yakinimdakiler_sayfasiState extends State<yakinimdakiler_sayfasi> {
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(5.0),
                         child: Text(
                           '${bilgi.mahalle} mahallesi',
                           style: const TextStyle(

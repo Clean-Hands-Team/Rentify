@@ -68,10 +68,7 @@ class _ProfilimState extends State<Profilim> {
                 padding:  const EdgeInsets.only(bottom: 5),
                 child: Profil_ilanlarim(yakindakilerRepository,resimRepository),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left:10 , right: 10),
-                child: alt_appbar(),
-              ),
+
             ],
           ),
 

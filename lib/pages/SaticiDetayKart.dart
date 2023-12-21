@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rentify/RenkTanimlama/RenkPages.dart';
+import 'package:rentify/constants//RenkPages.dart';
 import 'package:rentify/repository/yakindakiler_repository.dart';
 
 class SaticiDetayKart extends StatefulWidget {
@@ -20,7 +20,7 @@ class _SaticiDetayKartState extends State<SaticiDetayKart> {
   Widget build(BuildContext context) {
     return Positioned(
       top: MediaQuery.of(context).size.height * 0.5 - 170,
-      left: MediaQuery.of(context).size.width * 0.5 - 170,
+      left: MediaQuery.of(context).size.width * 0.5 - 178,
       child: Stack(
         children: [
           ClipRRect(
@@ -33,7 +33,6 @@ class _SaticiDetayKartState extends State<SaticiDetayKart> {
                     width: 350,
                     height: 170,
                     decoration: const BoxDecoration(
-                      color: Colors.cyan,
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),

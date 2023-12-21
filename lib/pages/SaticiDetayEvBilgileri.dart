@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rentify/RenkTanimlama/RenkPages.dart';
+import 'package:rentify/constants//RenkPages.dart';
 import 'package:rentify/repository/yakindakiler_repository.dart';
 
 class SaticiDetayEvBilgileri extends StatelessWidget {
@@ -192,22 +192,23 @@ class SaticiDetayEvBilgileri extends StatelessWidget {
 
                                 // Rezervasyon Talebi Tıklanma yeri
                               },
-                              child: Container(
-                                height: 50,
-                                width: 160,
-                                decoration: BoxDecoration(
-                                  color: Renkler.FF235265, // Mavi arka plan rengi
-                                  borderRadius: BorderRadius.circular(
-                                      30), // Çerçevenin yuvarlak köşeleri
+                              child:ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Renkler.FF235265, // Mavi arka plan rengi
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30), // Çerçevenin yuvarlak köşeleri
+                                  ),
+                                  minimumSize: const Size(160, 50), // Genişlik ve yükseklik
+                                  padding: const EdgeInsets.all(15.0), // İç boşluk
                                 ),
-                                child:const Padding(
-                                  padding: EdgeInsets.all(15.0),
-                                  child: Text(
-                                      'Rezervasyon Talebi',
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.white,
-                                    ),
+                                onPressed: () {
+                                  // Buraya tıklama işlemi için kodunuzu ekleyin
+                                },
+                                child: const Text(
+                                  'Rezervasyon Talebi',
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ),

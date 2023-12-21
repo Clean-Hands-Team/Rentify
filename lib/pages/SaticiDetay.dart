@@ -3,7 +3,7 @@ import 'package:rentify/repository/yakindakiler_repository_resim.dart';
 import 'package:rentify/repository/yakindakiler_repository.dart';
 import 'package:rentify/repository/SaticiDetay_repository_resim.dart';
 import 'SaticiDetayKart.dart';
-import 'package:rentify/RenkTanimlama/RenkPages.dart';
+import 'package:rentify/constants//RenkPages.dart';
 import 'SaticiDetayEvBilgileri.dart';
 
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';

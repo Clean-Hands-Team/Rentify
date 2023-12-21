@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'pages/yakinimdakiler_pages.dart';
+import 'package:rentify/constants/RenkPages.dart';
 import 'pages/alt_appbar.dart';
-import 'repository/yakindakiler_repository.dart';
-import 'repository/yakindakiler_repository_resim.dart';
-import 'package:rentify/RenkTanimlama/RenkPages.dart';
-import 'pages/ilkSayfa.dart';
+
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -22,13 +20,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.cyan,
+          unselectedItemColor: Colors.grey,
+          backgroundColor: Colors.blue,
         ),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Renkler.FF97BCBB),
         useMaterial3: true,
       ),
-      themeMode: ThemeMode.system,
-      home: const ilkSayfa(),
+
+      home:  alt_appbar(),
     );
   }
 }

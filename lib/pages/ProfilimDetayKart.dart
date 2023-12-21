@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rentify/RenkTanimlama/RenkPages.dart';
+import 'package:rentify/constants//RenkPages.dart';
 import 'package:rentify/repository/Profil_repository.dart';
 
 
@@ -23,14 +23,13 @@ class _ProfilimDetayKartState extends State<ProfilimDetayKart> {
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child:Card(
-              elevation: 5.0,
+              elevation: 20.0,
               child: Stack(
                 children: [
                   Container(
                     width: 340,
                     height: 170,
                     decoration: const BoxDecoration(
-                      color: Colors.cyan,
                     ),
                     child: const Padding(
                       padding: EdgeInsets.all(8.0),
@@ -39,7 +38,7 @@ class _ProfilimDetayKartState extends State<ProfilimDetayKart> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Padding(
-                            padding: EdgeInsets.only(left: 25, top: 10, bottom: 10),
+                            padding: EdgeInsets.only(left: 25, top: 10),
                             child: Text(
                               'Muhammed Said Eker ',
                               style: TextStyle(

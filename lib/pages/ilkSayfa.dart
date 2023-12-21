@@ -3,7 +3,7 @@ import 'yakinimdakiler_pages.dart';
 import 'alt_appbar.dart';
 import 'package:rentify/repository/yakindakiler_repository_resim.dart';
 import 'package:rentify/repository/yakindakiler_repository.dart';
-import 'package:rentify/RenkTanimlama/RenkPages.dart';
+import 'package:rentify/constants//RenkPages.dart';
 
 
 class ilkSayfa extends StatefulWidget {
@@ -21,11 +21,10 @@ class _ilkSayfaState extends State<ilkSayfa> {
   @override
   Widget build(BuildContext context) {
 
-    return MaterialApp(
-      home: Scaffold(
+    return  Scaffold(
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.only(top: 20.0, left: 10.0, right: 10.0 , bottom: 20),
+            padding: const EdgeInsets.only(top: 20.0, left: 10.0, right: 10.0 , bottom: 10),
             child: Column(
               children: <Widget>[
                 Padding(
@@ -77,6 +76,8 @@ class _ilkSayfaState extends State<ilkSayfa> {
                                     filled: true, // Arka plan rengini etkinleştirir
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(15.0),
+                                      borderSide:BorderSide.none,
+
                                     ),
                                   ),
                                 )
@@ -128,15 +129,12 @@ class _ilkSayfaState extends State<ilkSayfa> {
                   padding: const EdgeInsets.only(bottom: 20),
                   child: yakinimdakiler_sayfasi(yakindakilerRepository,resimRepository),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top:10),
-                  child: alt_appbar(),
-                ),
+
               ],
             ),
           ),
         ),
-      ),
-    );
+      )
+    ;
   }
 }

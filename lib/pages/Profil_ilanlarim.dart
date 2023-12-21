@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rentify/RenkTanimlama/RenkPages.dart';
+import 'package:rentify/constants//RenkPages.dart';
 import 'package:rentify/repository/yakindakiler_repository.dart';
 import 'package:rentify/repository/yakindakiler_repository_resim.dart';
 import 'SaticiDetay.dart';
@@ -61,14 +61,17 @@ class _Profil_ilanlarimState extends State<Profil_ilanlarim> {
                           borderRadius: BorderRadius.circular(10),
                           child: Padding(
                             padding:  const EdgeInsets.only(top:10, right: 20, left: 20),
-                            child: Container(
-                              width: 350,
-                              height: 150,
-                              decoration: BoxDecoration(
-                                color: Colors.blue,
-                                image: DecorationImage(
-                                  image: AssetImage(imagePaths[index]),
-                                  fit: BoxFit.cover,
+                            child: Card(
+                              elevation: 10,
+                              child: Container(
+                                width: 350,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                  color: Colors.blue,
+                                  image: DecorationImage(
+                                    image: AssetImage(imagePaths[index]),
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),

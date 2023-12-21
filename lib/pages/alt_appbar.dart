@@ -1,49 +1,59 @@
 import 'package:flutter/material.dart';
-import 'package:rentify/RenkTanimlama/RenkPages.dart';
+import 'package:rentify/constants//RenkPages.dart';
 import 'package:rentify/main.dart';
 import 'Profilim_pages.dart';
 import 'package:rentify/repository/yakindakiler_repository.dart';
 import 'Mesajlarim_Kutusu.dart';
 import 'SayfalarDöngüsü.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class alt_appbar extends StatelessWidget {
-  final List<IconData> icons = [
-    Icons.home,
-    Icons.message,
-    Icons.favorite,
-    Icons.person,
 
-  ]; // İkonlarınızı burada tanımlayın
+class alt_appbar extends ConsumerStatefulWidget {
+  @override
+  _alt_appbarState createState() => _alt_appbarState();
+}
+
+class _alt_appbarState extends ConsumerState<alt_appbar> {
+
+
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 10),
-      child: Stack(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Container(
-              color: Renkler.FF235265,
-              height: 60.0,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: List.generate(icons.length, (index) {
-                  return IconButton(
-                    icon: Icon(icons[index], color: Colors.white),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => sayfalar[index]),
-                      );
-                    },
-                  );
-                }),
+    return Scaffold(
+      bottomNavigationBar: ClipRRect(
+        borderRadius: const BorderRadius.only(
+          topRight: Radius.circular(30),
+          topLeft: Radius.circular(30),
+        ),
+        child: BottomNavigationBar(
+          currentIndex: ref.watch(TabbBarProvider).selectedIndex,
+          backgroundColor: Renkler.FF235265,
+          onTap: (int value){
+            ref.watch(TabbBarProvider).selectedItemConvert(value);
+          },
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: SizedBox(
+                  height: 14, child: Icon(Icons.home)
               ),
+              label: '',
             ),
-          ),
-        ],
+            BottomNavigationBarItem(
+              icon: Icon(Icons.message),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.favorite),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: '',
+            ),
+          ],
+        ),
       ),
+      body:ref.watch(TabbBarProvider).sayfalar[ref.watch(TabbBarProvider).selectedIndex] ,
     );
   }
 }
